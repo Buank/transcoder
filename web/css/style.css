@@ -1,0 +1,67 @@
+@import "reset.css";
+.img-st{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    outline: none;
+}
+.img-st_cov{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    outline: none;
+}
+.div-st{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.div-st_start{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.div-st_end{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.div-st_sp-bet{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.w-100{
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+label{
+    display: inline-block;
+}
+
+.body_bg{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 100vh;
+    z-index: 10;
+    background-attachment:fixed;
+}
+.bg_header{
+    padding: 20px;
+    background-color: rgba(219, 219, 219, 0.58);
+}
+.tittle_header{
+    font-size: 20px;
+    color: black;
+}
+
+.main_block{
+    margin: 50px;
+    padding: 50px;
+    background-color: rgba(219, 219, 219, 0.58);
+
+}

@@ -1,0 +1,38 @@
+{
+  "name": "videotranscoding",
+  "version": "1.0.0",
+  "description": "Video transcoding server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sudo node ./server.js --stack_size=18192 --max-old-space-size=18192"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://buank@bitbucket.org/nonamecompanyteam/transcodeshowstream.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/nonamecompanyteam/transcodeshowstream#readme",
+  "dependencies": {
+    "basic-ftp": "^4.2.0",
+    "body-parser": "^1.19.0",
+    "cron": "^1.7.2",
+    "executive": "^1.6.3",
+    "express": "^4.17.1",
+    "express-serve-static-core": "^0.1.1",
+    "fluent-ffmpeg": "^2.1.0",
+    "fs-extra": "^8.1.0",
+    "ftp": "^0.3.10",
+    "morgan": "^1.9.1",
+    "needle": "^2.4.0",
+    "orm": "^5.0.4",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "pg-promise": "^9.2.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "sequelize": "^5.19.1",
+    "telegraf": "^3.36.0"
+  }
+}
