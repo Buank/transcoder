@@ -4,6 +4,8 @@ const express = require('express'),
     env = require('./config/env'),
     CronJob = require('cron').CronJob;
 
+const path = require('path');
+
 //Подключение моделей и модулей
 const transcodeVideoRouter = require('./api/routes/transcoding-video-route');
 const statisticsRouter = require('./api/routes/statistics-route');
@@ -31,7 +33,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(express.static('../web'));
+app.use(express.static(path.join(__dirname, 'web')));
 
 
 // Routes
