@@ -11,10 +11,25 @@ const dbModel = require("../../db-model");
  * ***/
 
 async function controller(req,res) {
+    const allowedSortFields = [
+        'id',
+        'status',
+        'uuid',
+        'downloaded',
+        'uploaded',
+        'transcoded',
+        'createdat'
+    ];
+
+    let sortField = req.query.sort;
+    if (!allowedSortFields.includes(sortField)) {
+        sortField = 'id';
+    }
+
     let pagination = {
-        offset: req.query.start?req.query.start:0,
-        limit:  req.query.count?req.query.count:10,
-        sort:  'ORDER BY ' + req.query.sort
+        offset: req.query.start ? req.query.start : 0,
+        limit:  req.query.count ? req.query.count : 10,
+        sort:  'ORDER BY ' + sortField
     };
     // console.log(pagination);
     //TODO Удалить pg-promis и перейти на ОРМ
