@@ -17,7 +17,7 @@ async function controller(req,res) {
         sort:  'ORDER BY ' + req.query.sort
     };
     // console.log(pagination);
-    //TODO Удалить нахуй pg-promis и перейти на ОРМ
+    //TODO Удалить pg-promis и перейти на ОРМ
 
     let data = await dbModel.any('SELECT id, status, uuid, downloaded, uploaded, transcoded, createdat FROM queue ' + pagination.sort + ' LIMIT ${limit} OFFSET ${offset}', {
         sort: pagination.sort,
