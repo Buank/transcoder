@@ -1,4 +1,5 @@
 const env = {
+
     chunks: 0, // количество чанков в папке с каналом, 1 chunk = 6 сек
     serverPort: '', // порт запуска веб‑сервера
 
@@ -25,6 +26,7 @@ const env = {
     db_database: '', // название базы данных
     db_user: '', // пользователь БД
     db_password: '' // пароль пользователя БД
+    // TELEGRAM_TOKEN is read directly from process.env in autoTranscode.js
 };
 
 module.exports = env;
