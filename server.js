@@ -11,7 +11,10 @@ const retranscodeRouter = require('./api/routes/retranscode-route');
 const cutVideoRouter = require('./api/routes/cut-video-route');
 const autoTranscode = require('./modules/autoTranscode');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// Disable TLS certificate validation only when explicitly allowed
+if (process.env.ALLOW_INVALID_TLS === 'true') {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
 
 require('events').EventEmitter.defaultMaxListeners = 150;
 // Настройки сервера
