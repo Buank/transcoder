@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "sudo node ./server.js --stack_size=18192 --max-old-space-size=18192"
+    "start": "node ./server.js --stack_size=18192 --max-old-space-size=18192"
   },
   "repository": {
     "type": "git",
