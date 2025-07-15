@@ -1,3 +1,59 @@
+# VideoTranscoding
+
+This project provides a simple interface for video transcoding.
+
+## Installation (Ubuntu 18.04)
+
+Below is an example of how to build **FFmpeg** with CUDA/NVENC support.
+
+1. Install build tools and dependencies:
+   ```bash
+   sudo apt-get install gcc
+   sudo apt-get install pkg-config
+   sudo apt install xz-utils
+   ```
+2. Download and compile FFmpeg:
+   ```bash
+   wget https://ffmpeg.org/releases/ffmpeg-4.1.3.tar.bz2
+   sudo tar jxf ffmpeg-4.1.3.tar.bz2
+   cd ffmpeg-4.1.3
+   ./configure --enable-libssh --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree \
+               --enable-libnpp --extra-cflags=-I/usr/local/cuda/include \
+               --extra-ldflags=-L/usr/local/cuda/lib64 --enable-librtmp
+   # If you see errors with libssh or librtmp
+   sudo apt-get install libssh-dev
+   sudo apt-get install librtmp-dev
+   sudo make && sudo make install
+   sudo apt-get install -y software-properties-common
+   sudo add-apt-repository ppa:jonathonf/ffmpeg-4
+   sudo apt install ffmpeg
+   ```
+   Install the CUDA driver as well if NVIDIA GPUs are used.
+
+## Running the Application
+
+1. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
+2. Copy `config/env-defaults.js` to `config/env.js` and adjust the values:
+   - `chunks` – number of HLS chunks stored per channel (1 chunk = 6 seconds).
+   - `serverPort` – port on which the HTTP server runs.
+3. Create a `static` folder and place a `playlist.m3u8` file inside it.  
+   This file should not be accessible to other users.
+4. Start the server:
+   ```bash
+   npm run start
+   ```
+
+### Recommendations
+
+Do not run more than five streams on a low-powered machine as CPU/GPU load may be high.
+
+---
+
+The original Russian instructions are preserved below.
+
 Install VideoTranscoding
 ----------------------------------------------------------------
 [System Ubuntu 18.04]
