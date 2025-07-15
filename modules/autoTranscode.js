@@ -5,7 +5,8 @@ const fs = require('fs');
 const exec = require("executive");
 const ndlReq = require('./needleSend');
 
-const bot = new Telegraf('934385804:AAHBSAiktUFjJp3yn_u8Bna782TMcYIQMXw');
+// Telegram bot token is expected via environment variable TELEGRAM_TOKEN
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 async function autoTranscode(){
     let active_video = await checkStatus();
